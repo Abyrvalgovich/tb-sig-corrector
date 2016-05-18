@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>huihuevich@gmail.com</em:id>
+    <em:type>2</em:type>
+    <em:name>QSO - Quick Signature Organizer</em:name>
+    <em:description>Simple addon for signature autoswitching</em:description>
+    <em:version>0.1.0</em:version>
+    <em:optionsURL>chrome://qfo/content/options.xul</em:optionsURL>
+    <em:creator>hui</em:creator>
+    <em:contributor>nothui</em:contributor>
+    <!-- Thunderbird -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
+        <em:minVersion>9.0</em:minVersion>
+        <em:maxVersion>38.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+    <!-- SeaMonkey -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+        <em:minVersion>2.20</em:minVersion>
+        <em:maxVersion>2.33.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>
