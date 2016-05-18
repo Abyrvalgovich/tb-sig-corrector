@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<prefwindow id="qfo-prefs" title="Quick Signature Organizer" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <prefpane label="Quick Signature Organizer">
+    <preferences>
+      <preference id="qfo-option-shout" name="extensions.qfo.shoutcloud" type="bool" />
+	  <preference id="qfo-option-first" name="extensions.qfo.first" type="bool" />
+      <preference id="qfo-option-plaintext" name="extensions.qfo.plaintext" type="bool" />
+	  <preference id="qfo-option-short" name="extensions.qfo.short" type="unichar"/> 
+	   <preference id="qfo-option-eng" name="extensions.qfo.eng" type="unichar" /> 
+	   <preference id="qfo-option-spam" name="extensions.qfo.spam" type="bool" />
+    </preferences>
+
+    <grid>
+      <columns>
+        <column flex="4"/>
+        <column flex="1"/>
+      </columns>
+      <rows>
+	  <row>
+          <label control="first" value="Works in first message" />
+          <checkbox id="first" preference="qfo-option-first" />
+        </row>
+        <row>
+          <label control="shoutcloud" value="Short signature" />
+          <checkbox id="shoutcloud" preference="qfo-option-shout" />
+        </row>
+		<row>
+		<textbox id="short" preference="qfo-option-short" />
+		</row>
+        <row>
+          <label control="plaintext" value="English signature" />
+          <checkbox id="plaintext" preference="qfo-option-plaintext" />
+        </row>
+		 <row>
+          <textbox id="eng" preference="qfo-option-eng"/>
+        </row>
+		 <row>
+          <label control="spam" value="Remove [VR-SPAM] on sending" />
+          <checkbox id="spam" preference="qfo-option-spam" />
+        </row>
+      </rows>
+    </grid>
+  </prefpane>
+</prefwindow>
