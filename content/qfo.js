@@ -37,30 +37,31 @@ insertFuckOff: function() {
 	//if at least one signature option is checked, get data we need later
 	if (QFO.isShout() || QFO.isAlwaysPlain()) {	
 		
-			//copy original body
-			editor.beginTransaction();
-			editor.selectAll();
-			var fulltext = editor.outputToString('text/html', 1);	
-			editor.beginningOfDocument();  
-			editor.endTransaction();
-		
-			//cheking sig and forwarding state
-			var checkSig = /(cols=".{1,3}">)([\s\S]*?)(<\/pre>)/i;
-			var checkNotFirst = /<blockquote cite|moz-forward-container/;
-			var notFirst = checkNotFirst.test(fulltext);
+		//copy original body
+		editor.beginTransaction();
+		editor.selectAll();
+		var fulltext = editor.outputToString('text/html', 1);	
+		editor.beginningOfDocument();  
+		editor.endTransaction();
+	
+		//cheking sig and forwarding state
+		var checkSig = /(cols=".{1,3}">)([\s\S]*?)(<\/pre>)/i;
+		var checkNotFirst = /<blockquote cite|moz-forward-container/;
+		var notFirst = checkNotFirst.test(fulltext);
 
-			//is there even a signature? 
-			if (notFirst) {
-				var checkmessagebodybeforequote = /([\s\S]*?)<blockquote cite|moz-forward-container/;
-				var textbodybeforequote = fulltext.match(checkmessagebodybeforequote); 
-				var sigHere = checkSig.test(textbodybeforequote[1]);
-			} else {
-				var sigHere = checkSig.test(fulltext);
-			}
+		//is there even a signature? 
+		if (notFirst) {
+			var checkmessagebodybeforequote = /([\s\S]*?)<blockquote cite|moz-forward-container/;
+			var textbodybeforequote = fulltext.match(checkmessagebodybeforequote); 
+			var sigHere = checkSig.test(textbodybeforequote[1]);
+		} else {
+			var sigHere = checkSig.test(fulltext);
+		}
 
 
 
 	
+
 
 		//if internal emails need short sigs
 		if (QFO.isShout() && (sigHere)) {	
